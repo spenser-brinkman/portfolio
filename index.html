@@ -18,7 +18,8 @@
 
         <!-- Nav -->
         <nav id="nav">
-            <a href="#" class="icon solid fa-user"><span>My Work</span></a>
+            <a href="#" class="icon solid fa-user"><span>Bio</span></a>
+            <a href="#work" class="icon solid fa-desktop"><span>Projects</span></a>
             <a href="#resume" class="icon solid fa-sm fa-file-alt"><span>Resume</span></a>
             <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
         </nav>
@@ -27,48 +28,54 @@
         <!-- Main -->
         <div id="main">
 
-            <!-- Work -->
-            <article id="#" class="panel">
+            <!-- Bio -->
+            <article id="home" class="panel">
                 <header>
                     <h2>Spenser Brinkman</h2>
                 </header>
 
                 <hr class="top-line">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed eveniet officia deleniti officiis similique aliquam inventore rerum eum libero voluptas dolorem neque consequuntur, quibusdam commodi incidunt sit odit accusantium!
-                </p>
-                
+                <section>
+                    <p>I'm a professional software developer with production-level experience in microservice-architechted backend APIs leveraging the Agile methodology and employing TDD wherever possible.</p>
+                    <p>Comfortable working on teams of all sizes and distributions, my skills in communication, time-management, critical thinking, and problem-solving help me meet challenging deadlines while delivering clean and maintainable code. I get enjoyment from drafting organized and digestible technical documentation and sharing new and best practices with others.</p>
+                    Most comfortable in a backend environment, though capable of delivering across an application's stack, some of my programming strengths include:
+                    <ul>
+                        <li>Creating expressive and intuitive APIs, both internal and client-facing</li>
+                        <li>Task automation through scripting and scheduled/recurring programs</li>
+                        <li>Relational database management and reporting via raw SQL and Rails ActiveRecord</li>
+                        <li>Code review, documentation, and pair-programming</li>
+                        <li>Coordination of version control via Git, along with code review on GitHub</li>
+                        <br>...and more!
+                    </ul>
+                    <p>Check out the other tabs above to see samples of my work and to get in touch with me.</p>
+                </section>
+            </article>
+            <!-- /Bio -->
+
+            <!-- Work -->
+            <article id="work" class="panel">
+                <header>
+                    <h2>Spenser Brinkman</h2>
+                </header>
+
+                <hr class="top-line">
                 <section>
                     <div class="row">
                         <div class="col-6 col-6-medium col-12-small">
-                            <a target="_blank" href="https://www.spenserbrinkman.com/treelogger" class="image fit">
-                                <img class="project" src="images/pic01.jpg" alt="TreeLogger">
-                            </a>
+                            <img data-modal-target="#treelogger" class="project project-tile image fit"
+                                src="images/pic01.jpg" alt="TreeLogger">
                         </div>
                         <div class="col-6 col-6-medium col-12-small">
-                            <a target="_blank" href="https://www.spenserbrinkman.com/greenhouse" class="image fit">
-                                <img class="project" src="images/pic02.jpg" alt="GreenHouse">
-                            </a>
+                            <img data-modal-target="#greenhouse" class="project project-tile image fit"
+                                src="images/pic02.jpg" alt="GreenHouse">
                         </div>
                         <div class="col-6 col-6-medium col-12-small">
-                            <a target="_blank" href="https://www.github.com/spenser-brinkman/jeopardy" class="image fit">
-                                <img class="project" src="images/jeopardy.png" alt="Jeopardy">
-                            </a>
+                            <img data-modal-target="#jeopardy" class="project project-tile image fit"
+                                src="images/jeopardy.png" alt="Jeopardy">
                         </div>
                         <div class="col-6 col-6-medium col-12-small">
-                            <a target="_blank" href="https://www.github.com/spenser-brinkman/ero" class="image fit">
-                                <img class="project" src="images/gem2.png" alt="Ero">
-                            </a>
-                        </div>
-                        <div class="col-6 col-6-medium col-12-small">
-                            <a href="#" class="image fit">
-                                <img src="images/pic05.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-6 col-6-medium col-12-small">
-                            <a href="#" class="image fit">
-                                <img src="images/pic06.jpg" alt="">
-                            </a>
+                            <img data-modal-target="#ero" class="project project-tile image fit"
+                                src="images/gem2.png" alt="Ero">
                         </div>
                     </div>
                 </section>
@@ -84,10 +91,10 @@
                 <hr class="top-line">
                 <section class="links">
                     <div class="grid-container">
-                        <span><a target="_blank" href="resume.pdf"
-                            class="grid-item anchor-button"><span>Open new tab</span></a></span>
-                        <span><a download="Resume Spenser Brinkman.pdf" href="resume.txt"
-                            class="grid-item anchor-button"><span>Download .pdf</span></a></span>
+                        <span><a target="_blank" href="assets/Spenser Brinkman Resume.pdf" class="grid-item anchor-button"><span>Open new
+                                    tab</span></a></span>
+                        <span><a download="Resume Spenser Brinkman.pdf" href="assets/Spenser Brinkman Resume.pdf"
+                                class="grid-item anchor-button"><span>Download .pdf</span></a></span>
                     </div>
                 </section>
             </article>
@@ -96,20 +103,22 @@
             <!-- Contact -->
             <article id="contact" class="panel">
                 <header>
-                    <h2>Contact Me</h2>
+                    <h2>Let's Connect!</h2>
                 </header>
 
                 <hr class="top-line">
                 <section class="links">
                     <div class="grid-container">
-                        <span><a target="_blank" href="https://linkedin.com/in/spenser-brinkman"
-                            class="grid-item anchor-button icon brands fa-linkedin"><span> LinkedIn</span></a></span>
-                        <span><a target="_blank" href="https://github.com/spenser-brinkman"
-                            class="grid-item anchor-button icon brands fa-github"><span> Github</span></a></span>
+                        <span><a title="New tab: linkedin.com/in/spenser-brinkman" target="_blank" href="https://linkedin.com/in/spenser-brinkman"
+                                class="grid-item anchor-button icon brands fa-linkedin"><span>
+                                    LinkedIn</span></a></span>
+                        <span><a title="New tab: github.com/spenser-brinkman" target="_blank" href="https://github.com/spenser-brinkman"
+                                class="grid-item anchor-button icon brands fa-github"><span> Github</span></a></span>
                     </div>
                 </section>
                 <hr class="bottom-line">
 
+                <!-- Email form -->
                 <form action="#" method="post">
                     <div>
                         <div class="row">
@@ -131,6 +140,7 @@
                         </div>
                     </div>
                 </form>
+                <!-- /Email form -->
             </article>
             <!-- /Contact -->
 
@@ -138,11 +148,64 @@
         <!-- /Main -->
 
         <div id="footer">
-            <p id="attribution"><a href="#">Spenser Brinkman</a> | Based on Astral from <a href="http://html5up.net">HTML5 UP</a></p>
+            <p id="attribution"><a href="#">Spenser Brinkman</a> | Based on Astral from <a
+                    href="http://html5up.net">HTML5 UP</a></p>
         </div>
+
+        <!-- Project modals -->
+        <div class="modal" id="treelogger">
+            <div class="modal-header">
+                <div class="title">
+                    <a target="_blank" href="https://www.spenserbrinkman.com/treelogger">TreeLogger</a>
+                </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Inventory and survey-tracking system for arboriculturists.
+            </div>
+        </div>
+
+        <div class="modal" id="greenhouse">
+            <div class="modal-header">
+                <div class="title">
+                    <a target="_blank" href="https://www.spenserbrinkman.com/greenhouse">GreenHouse</a>
+                </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam.
+            </div>
+        </div>
+
+        <div class="modal" id="jeopardy">
+            <div class="modal-header">
+                <div class="title">
+                    <a target="_blank" href="https://www.github.com/spenser-brinkman/jeopardy">CLI Jeopardy!</a>
+                </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam.
+            </div>
+        </div>
+
+        <div class="modal" id="ero">
+            <div class="modal-header">
+                <div class="title">
+                    <a target="_blank" href="https://www.github.com/spenser-brinkman/ero">Expressive Rails Oopsies, "Ero" (Ruby Gem)</a>
+                </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam.
+            </div>
+        </div>
+
+        <div id="overlay"></div>
+        <!-- /Project modals -->
+
     </div>
     <!-- /Wrapper-->
-
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -150,6 +213,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/project_modals.js"></script>
 
 </body>
 
