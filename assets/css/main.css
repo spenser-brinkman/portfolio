@@ -2168,15 +2168,10 @@ input, select, textarea {
         justify-items: center;
         align-items: center;
         margin: auto; /* horizontally center the grid */
-        max-width: 75%; /* adjust as needed */
+        max-width: 100%; /* adjust as needed */
         grid-row-gap: 10%;
-        grid-column-gap: 10%;
     }
     
-    .grid-item {
-        text-align: center;
-    }
-
     .grid-container span {
         white-space: nowrap;
     }
@@ -2203,7 +2198,8 @@ input, select, textarea {
     section.links {
         margin: auto;
         margin-bottom: 0em;
-        max-width: 75%;
+        max-width: 100%;
+        justify-content: center;
     }
 
     hr.top-line {
@@ -2296,3 +2292,15 @@ input, select, textarea {
         pointer-events: all;
     }
     /* /Project modals */
+
+    .social-url {
+        font-size: .75em;
+        white-space: nowrap;
+        margin-bottom: 0;
+        line-height: 1em;
+    }
+
+    .social-container {
+        text-align: center;
+        max-width: 75%
+    }
