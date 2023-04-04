@@ -1327,7 +1327,7 @@ input, select, textarea {
     body, input, textarea, select {
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
-        color: #777777;
+        color: #9D9488;
         font-size: 20pt;
         line-height: 1.75em;
     }
@@ -1366,7 +1366,7 @@ input, select, textarea {
 
     strong, b, h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
-        color: #363636;
+        color: #9D9488;
     }
 
     h1 {
@@ -1412,7 +1412,7 @@ input, select, textarea {
 
     hr {
         border: 0;
-        border-top: solid 1px #ddd;
+        border-top: solid 1px #3A3E41;
         padding: 1.5em 0 0 0;
         margin: 1.75em 0 0 0;
     }
@@ -1466,7 +1466,7 @@ input, select, textarea {
     form label {
         display: block;
         font-weight: 400;
-        color: #363636;
+        color: #d8d4cf;
         margin: 0 0 1em 0;
     }
 
@@ -1477,7 +1477,7 @@ input, select, textarea {
     form textarea {
         -webkit-appearance: none;
         border: 0;
-        background: #f4f4f4;
+        background: #1E2122;
         padding: 0.75em;
         width: 100%;
         -moz-transition: background-color .25s ease-in-out;
@@ -1533,7 +1533,7 @@ input, select, textarea {
 
         header > p {
             margin: 0.5em 0 0 0;
-            color: #aaa;
+            color: #9D9488;
         }
 
         @media screen and (max-width: 736px) {
@@ -1600,7 +1600,7 @@ input, select, textarea {
         -webkit-appearance: none;
         display: inline-block;
         background-color: #222222;
-        color: #ffffff;
+        color: #9D9488;
         border: 0;
         cursor: pointer;
         outline: 0;
@@ -1633,7 +1633,7 @@ input, select, textarea {
         button.alt,
         a.anchor-button.alt,
         .button.alt {
-            background-color: #777777;
+            background-color: #9D9488;
         }
 
             input[type="button"].alt:hover,
@@ -1794,7 +1794,7 @@ input, select, textarea {
         #nav a {
             position: relative;
             display: inline-block;
-            color: #ffffff;
+            color: #E8E6E3;
             width: 1em;
             height: 1em;
             line-height: 0.9em;
@@ -1823,7 +1823,7 @@ input, select, textarea {
                 left: 50%;
                 bottom: -0.75em;
                 margin-left: -0.5em;
-                border-bottom: solid 0em #ffffff;
+                border-bottom: solid 0em #181A1B;
                 border-left: solid 0.5em transparent;
                 border-right: solid 0.5em transparent;
                 -moz-transition: border-bottom-width .25s ease-in-out;
@@ -1837,7 +1837,7 @@ input, select, textarea {
                 display: block;
                 position: absolute;
                 background: #222222;
-                color: #ffffff;
+                color: #d8d4cf;
                 top: -2.75em;
                 font-size: 0.3em;
                 height: 2.25em;
@@ -1964,7 +1964,7 @@ input, select, textarea {
         position: relative;
         overflow: hidden;
         width: 100%;
-        background: #ffffff;
+        background: #181A1B;
         box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
         -moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
         -webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
@@ -2068,7 +2068,7 @@ input, select, textarea {
                         height: 2.75em;
                         background: #000;
                         background: rgba(0, 0, 0, 0.75);
-                        color: #ffffff;
+                        color: #181A1B;
                         text-align: center;
                         line-height: 2.75em;
                         font-size: 1.5em;
@@ -2236,7 +2236,7 @@ input, select, textarea {
         border: 1px solid black;
         border-radius: 10px;
         z-index: 10;
-        background-color: white;
+        background-color: #181A1B;
         width: 80%;
         max-width: 1000px;
     }
@@ -2263,7 +2263,7 @@ input, select, textarea {
         border: none;
         outline: none;
         background: none;
-        color: #777777;
+        color: #9D9488;
         width: auto;
         font-size: 1.25rem;
         font-weight: bold;
