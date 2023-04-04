@@ -2312,3 +2312,20 @@ input, select, textarea {
     #nav.bottom {
         height: auto;
     }
+
+    header#bio-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header#bio-header h2 {
+        margin: 0;
+    }
+    
+    header#bio-header span {
+        margin: 0;
+        display: inline-block;
+        width: auto;
+        margin-left: 10px;
+    }
