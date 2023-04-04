@@ -2308,3 +2308,7 @@ input, select, textarea {
     a.weblink {
         color: #466E64;
     }
+
+    #nav.bottom {
+        height: auto;
+    }
