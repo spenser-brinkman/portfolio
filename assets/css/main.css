@@ -2170,6 +2170,7 @@ input, select, textarea {
         margin: auto; /* horizontally center the grid */
         max-width: 100%; /* adjust as needed */
         grid-row-gap: 10%;
+        margin: 0 10%;
     }
     
     .grid-container span {
