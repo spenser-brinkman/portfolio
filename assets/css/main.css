@@ -2293,13 +2293,6 @@ input, select, textarea {
     }
     /* /Project modals */
 
-    .social-url {
-        font-size: .75em;
-        white-space: nowrap;
-        margin-bottom: 0;
-        line-height: 1em;
-    }
-
     .social-container {
         text-align: center;
         max-width: 75%
