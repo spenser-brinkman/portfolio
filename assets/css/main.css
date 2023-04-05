@@ -2249,7 +2249,7 @@ input, select, textarea {
     }
 
     .modal-header {
-        padding: 30px 40px;
+        padding: 3% 3%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2258,7 +2258,7 @@ input, select, textarea {
 
     .modal-header .title {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .modal-header .close-button {
@@ -2270,41 +2270,52 @@ input, select, textarea {
         width: auto;
         font-size: 1.25rem;
         font-weight: bold;
+        padding: 0;
     }
 
     .modal-body {
-        padding: 30px 40px;
+        padding: 3% 3%;
+        line-height: 1.3;
+
     }
 
-        @media screen and (max-width: 1100px) {
-            .modal-body {
-                width: 100%;
-                font-size: .75rem;
-                line-height: 1.3;
-            }
-        }
-
         @media screen and (max-width: 1680px) {
-            .modal-body p, .tech-stack {
-                font-size: 13pt;
+            .modal {
+                font-size: 100%;
             }
+            
+            .modal-header .title {
+                font-size: 2rem;
+            }        
         }
 
         @media screen and (max-width: 1280px) {
-            .modal-body p, .tech-stack {
-                font-size: 11pt;
+            .modal {
+                font-size: 80%;
+            }
+
+            .modal-header .title {
+                font-size: 1.7em;
             }
         }
 
         @media screen and (max-width: 736px) {
-            .modal-body p, .tech-stack {
-                font-size: 8pt;
+            .modal {
+                font-size: 60%;
+            }
+
+            .modal-header .title {
+                font-size: 1.6em;
             }
         }
 
         @media screen and (max-width: 360px) {
-            .modal-body p, .tech-stack {
-                font-size: 9pt;
+            .modal {
+                font-size: 40%;
+            }
+
+            .modal-header .title {
+                font-size: .8rem;
             }
         }
 
@@ -2325,7 +2336,6 @@ input, select, textarea {
         columns: 3;
         -webkit-columns: 3;
         -moz-columns: 3;
-        margin-bottom: 10px;
     }
 
     @media screen and (max-width: 1200) {
@@ -2333,7 +2343,6 @@ input, select, textarea {
             columns: 2;
             -webkit-columns: 2;
             -moz-columns: 2;
-            margin-bottom: 10px;
         }
     }
 
