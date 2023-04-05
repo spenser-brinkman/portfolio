@@ -2382,3 +2382,20 @@ input, select, textarea {
         width: auto;
         margin-left: 10px;
     }
+
+/* TODO */
+/* 
+    img.tool {
+        border-radius: 3px;
+        padding: 0;
+    }
+
+    div.tools.row > div {
+        padding: 0 1%;
+    }
+
+    div.tools.row {
+        padding: 1.25em 1.25em 0 1.25em;
+        justify-content: center;
+
+    } */
