@@ -1491,7 +1491,8 @@ input, select, textarea {
         form input[type="password"]:focus,
         form select:focus,
         form textarea:focus {
-            background: #f8f8f8;
+            background: #1E2122;
+            outline: 1px solid #466E64;
         }
 
     form input[type="text"],
