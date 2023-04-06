@@ -38,7 +38,7 @@ form.addEventListener("submit", function(event) {
   })
   .then(({ ok, data }) => {
     messageElement.innerText = data.message;
-    messageElement.classList.add("message");
+    messageElement.classList.add("form-message");
 
     // apply the appropriate styles to the message element based on the response status
     if (ok) {
@@ -49,7 +49,7 @@ form.addEventListener("submit", function(event) {
 
     // add the message element to the DOM
     submitButton.after(messageElement);
-    messageElement.classList.add("message-show");
+    messageElement.classList.add("form-message-show");
 
     // trigger a reflow to apply the new styles before transitioning the opacity
     messageElement.offsetHeight;
