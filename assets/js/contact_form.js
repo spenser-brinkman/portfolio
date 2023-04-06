@@ -21,10 +21,19 @@ form.addEventListener("submit", function(event) {
     messageElement.style.color = ok ? "green" : "red";
     submitButton.after(messageElement);
 
-    // if it's an error message, remove it after 5 seconds
+    // add a fade-in effect for both success and error messages
+    messageElement.style.opacity = "0";
+    setTimeout(function() {
+      messageElement.style.opacity = "1";
+    }, 100);
+
     if (!ok) {
       setTimeout(function() {
-        messageElement.remove();
+        // add a fade-out effect for error messages only
+        messageElement.style.opacity = "0";
+        setTimeout(function() {
+          messageElement.remove();
+        }, 500);
       }, 5000);
     }
   })
