@@ -1692,7 +1692,7 @@ input, select, textarea {
             button,
             a.anchor-button,
             .button {
-                width: 100%;
+                max-width: 100%;
             }
 
         }
