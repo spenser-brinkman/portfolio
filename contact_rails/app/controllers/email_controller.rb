@@ -13,6 +13,11 @@ class EmailController < ApplicationController
       return render json: { status: 'failure' }, status: :bad_request
     end
 
+    unless sender_email.match?(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/)
+      return render status: :bad_request,
+                    json: { message: 'The provided email doesn\'t seem to be valid. If you think this error is a mistake, please let me know by emailing me directly at brinkman.spenser@gmail.com.' }
+    end
+
     payload = {
       'from' => 'brinkman.spenser@gmail.com',
       'fromName' => "#{sender_name} (via portfolio)",
@@ -31,10 +36,15 @@ class EmailController < ApplicationController
       http.request(request)
     end
 
-    if response.is_a?(Net::HTTPSuccess)
-      render json: { status: 'success' }, status: :ok
+    if (response.body.include? 'success') && (response.body['success'] == false)
+      render status: :bad_request,
+             json: { message: response.body['error'] }
+    elsif response.is_a?(Net::HTTPSuccess)
+      render status: :ok,
+             json: { message: 'Message successfully sent!' }
     else
-      render json: { status: 'failure' }, status: :bad_request
+      render status: 500,
+             json: { message: 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at brinkman.spenser@gmail.com.' }
     end
   end
 end
