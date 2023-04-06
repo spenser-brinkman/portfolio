@@ -6,7 +6,7 @@ class EmailController < ApplicationController
   def create
     sender_name = params[:name]
     sender_email = params[:email]
-    msg_subject = params[:subject].present? ? params[:subject] : 'A message was sent via your portfolio'
+    msg_subject = params[:subject]
     msg_body = params[:body]
 
     return render json: { message: 'Please include an email address with your message.' }, status: :bad_request if sender_email.blank?
@@ -23,7 +23,7 @@ class EmailController < ApplicationController
       'fromName' => "#{sender_name} (via portfolio)",
       'replyTo' => sender_email,
       'msgTo' => ['brinkman.spenser@gmail.com'],
-      'subject' => msg_subject,
+      'subject' => msg_subject.present? ? msg_subject : 'A message was sent via your portfolio',
       'body' => "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_email}<br>Subject: #{msg_subject}<br><br>#{msg_body}",
       'apikey' => Rails.application.credentials.apikey
     }
