@@ -4,11 +4,15 @@ require 'json'
 
 class EmailController < ApplicationController
   def create
+    if params[:email].blank? || params[:name].blank? || params[:body].blank?
+      return render json: { status: 'failure' }, status: :bad_request
+    end
+
     payload = {
       'from' => params[:email],
       'fromName' => params[:name],
-      'to' => 'bob@example.com',
-      'subject' => params[:subject],
+      'msgTo' => ['brinkman.spenser@gmail.com'],
+      'subject' => params[:subject] || 'A message was sent via your portfolio',
       'body' => params[:body],
       'apikey' => Rails.application.credentials.apikey,
     }
