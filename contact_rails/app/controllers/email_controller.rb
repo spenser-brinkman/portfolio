@@ -4,17 +4,23 @@ require 'json'
 
 class EmailController < ApplicationController
   def create
-    if params[:email].blank? || params[:name].blank? || params[:body].blank?
+    sender_name = params[:name]
+    sender_email = params[:email]
+    msg_subject = params[:subject]
+    msg_body = params[:body]
+
+    if sender_email.blank? || sender_name.blank? || msg_body.blank?
       return render json: { status: 'failure' }, status: :bad_request
     end
 
     payload = {
-      'from' => params[:email],
-      'fromName' => params[:name],
+      'from' => 'brinkman.spenser@gmail.com',
+      'msgFrom' => sender_email,
+      'msgFromName' => sender_name,
       'msgTo' => ['brinkman.spenser@gmail.com'],
-      'subject' => params[:subject] || 'A message was sent via your portfolio',
-      'body' => params[:body],
-      'apikey' => Rails.application.credentials.apikey,
+      'subject' => msg_subject || 'A message was sent via your portfolio',
+      'body' => "Name: #{sender_name}\nEmail:#{sender_email}\nSubject:#{msg_subject}\nBody:#{msg_body}",
+      'apikey' => Rails.application.credentials.apikey
     }
 
     uri = URI.parse('https://api.elasticemail.com/v2/email/send')
