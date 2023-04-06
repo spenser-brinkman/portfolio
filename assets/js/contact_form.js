@@ -1,9 +1,10 @@
 const form = document.getElementById("contactForm");
 const submitButton = form.querySelector("input[type='submit']");
 const messageElement = document.createElement("div");
+messageElement.setAttribute("style", "opacity: 0; transition: opacity .5s ease-in-out;");
 
 form.addEventListener("submit", function(event) {
-  event.preventDefault(); // prevent the default form submission behavior
+  event.preventDefault();
 
   const formData = new FormData(form);
 
@@ -17,14 +18,15 @@ form.addEventListener("submit", function(event) {
   .then(({ ok, data }) => {
     messageElement.innerText = data.message;
 
-    // apply the appropriate styles to the message element based on the response status
     if (ok) {
-      messageElement.setAttribute("style", "color: green;");
+      messageElement.setAttribute("style", "color: green; opacity: 1; transition: opacity .5s ease-in-out;");
     } else {
-      messageElement.setAttribute("style", "color: red;");
+      messageElement.setAttribute("style", "color: red; opacity: 1; transition: opacity .5s ease-in-out;");
+      setTimeout(() => {
+        messageElement.setAttribute("style", "opacity: 0; transition: opacity .5s ease-in-out;");
+      }, 3000);
     }
 
-    // add the message element to the DOM
     submitButton.after(messageElement);
   })
   .catch(error => console.error(error));
