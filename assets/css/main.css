@@ -2383,18 +2383,6 @@ input, select, textarea {
         margin-left: 10px;
     }
 
-    .form-message {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
-      }
-      
-    .form-message-show {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.5s ease-in-out;
-    }
-
 /* TODO */
 /* 
     img.tool {
