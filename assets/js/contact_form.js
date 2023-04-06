@@ -19,15 +19,20 @@ form.addEventListener("submit", function(event) {
     messageElement.innerText = data.message;
 
     if (ok) {
-      messageElement.setAttribute("style", "color: green; opacity: 1; transition: opacity .5s ease-in-out;");
+      messageElement.setAttribute("style", "color: green;");
+      form.style.display = "none"; // hide the form if the message is a success
     } else {
-      messageElement.setAttribute("style", "color: red; opacity: 1; transition: opacity .5s ease-in-out;");
-      setTimeout(() => {
-        messageElement.setAttribute("style", "color: red; opacity: 0; transition: opacity .5s ease-in-out;");
-      }, 3000);
+      messageElement.setAttribute("style", "color: red;");
     }
 
-    submitButton.after(messageElement);
+    form.insertAdjacentElement("afterend", messageElement);
+    
+    // fade out the error message after 3 seconds
+    if (!ok) {
+      setTimeout(() => {
+        messageElement.remove();
+      }, 3000);
+    }
   })
   .catch(error => console.error(error));
 });
