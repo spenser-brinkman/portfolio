@@ -9,9 +9,9 @@ class EmailController < ApplicationController
     msg_subject = params[:subject]
     msg_body = params[:body]
 
-    if sender_email.blank? || sender_name.blank? || msg_body.blank?
-      return render json: { status: 'failure' }, status: :bad_request
-    end
+    return render json: { message: 'Please include a name with your message.' }, status: :bad_request if sender_email.blank?
+    return render json: { message: 'Please include an email address with your message.' }, status: :bad_request if sender_name.blank?
+    return render json: { message: 'Please include a body for your message.' }, status: :bad_request if msg_body.blank?
 
     unless sender_email.match?(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/)
       return render status: :bad_request,
