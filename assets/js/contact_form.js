@@ -23,7 +23,7 @@ form.addEventListener("submit", function(event) {
     } else {
       messageElement.setAttribute("style", "color: red; opacity: 1; transition: opacity .5s ease-in-out;");
       setTimeout(() => {
-        messageElement.setAttribute("style", "opacity: 0; transition: opacity .5s ease-in-out;");
+        messageElement.setAttribute("style", "color: red; opacity: 0; transition: opacity .5s ease-in-out;");
       }, 3000);
     }
 
