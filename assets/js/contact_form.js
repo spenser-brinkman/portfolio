@@ -38,6 +38,7 @@ form.addEventListener("submit", function(event) {
   })
   .then(({ ok, data }) => {
     messageElement.innerText = data.message;
+    messageElement.classList.add("message");
 
     // apply the appropriate styles to the message element based on the response status
     if (ok) {
@@ -48,6 +49,7 @@ form.addEventListener("submit", function(event) {
 
     // add the message element to the DOM
     submitButton.after(messageElement);
+    messageElement.classList.add("message-show");
 
     // trigger a reflow to apply the new styles before transitioning the opacity
     messageElement.offsetHeight;
@@ -62,7 +64,7 @@ form.addEventListener("submit", function(event) {
         setTimeout(function() {
           messageElement.remove();
         }, 500);
-      }, 5000);
+      }, 3000);
     }
   })
   .catch(error => console.error(error));
