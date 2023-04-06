@@ -2,8 +2,8 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-class ContactController < ApplicationController
-  def send_email
+class EmailController < ApplicationController
+  def create
     payload = {
       'from' => params[:email],
       'fromName' => params[:name],
