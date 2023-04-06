@@ -6,7 +6,7 @@ class EmailController < ApplicationController
   def create
     sender_name = params[:name]
     sender_email = params[:email]
-    msg_subject = params[:subject] || 'A message was sent via your portfolio'
+    msg_subject = params[:subject].present? ? params[:subject] : 'A message was sent via your portfolio'
     msg_body = params[:body]
 
     return render json: { message: 'Please include an email address with your message.' }, status: :bad_request if sender_email.blank?
