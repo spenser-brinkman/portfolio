@@ -18,7 +18,7 @@ class EmailController < ApplicationController
       'replyTo' => sender_email,
       'msgTo' => ['brinkman.spenser@gmail.com'],
       'subject' => msg_subject || 'A message was sent via your portfolio',
-      'body' => "From: #{sender_name} - <br>#{msg_body}",
+      'body' => "From: #{sender_name}<br>Email: #{sender_email}<br>Subject: #{msg_subject}<br><br>#{msg_body}",
       'apikey' => Rails.application.credentials.apikey
     }
 
