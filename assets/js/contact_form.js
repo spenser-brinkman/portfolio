@@ -4,16 +4,11 @@ const messageElement = document.createElement("div");
 
 // add CSS rules for the message element
 const messageStyles = `
-  position: absolute;
-  top: 100%;
-  left: 50%;
+  display: inline;
   transform: translate(-50%, -50%);
-  padding: 1em;
-  border-radius: 0.5em;
-  font-size: 1.2em;
   color: white;
   transition: opacity 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 `;
 
 // add CSS rules for the success message
