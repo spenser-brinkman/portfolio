@@ -15,11 +15,11 @@ class EmailController < ApplicationController
 
     payload = {
       'from' => 'brinkman.spenser@gmail.com',
-      'fromName' => sender_name,
+      'fromName' => "#{sender_name} (via portfolio)",
       'replyTo' => sender_email,
       'msgTo' => ['brinkman.spenser@gmail.com'],
       'subject' => msg_subject || 'A message was sent via your portfolio',
-      'body' => "From: #{sender_name}<br>Email: #{sender_email}<br>Subject: #{msg_subject}<br><br>#{msg_body}",
+      'body' => "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_email}<br>Subject: #{msg_subject}<br><br>#{msg_body}",
       'apikey' => Rails.application.credentials.apikey
     }
 
