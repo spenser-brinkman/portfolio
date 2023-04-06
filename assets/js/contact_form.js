@@ -25,7 +25,7 @@ form.addEventListener("submit", function(event) {
       messageElement.setAttribute("style", "color: red;");
     }
 
-    form.insertAdjacentElement("afterend", messageElement);
+    contactFormSection.after(messageElement);
     
     // fade out the error message after 3 seconds
     if (!ok) {
