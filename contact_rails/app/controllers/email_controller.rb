@@ -15,7 +15,7 @@ class EmailController < ApplicationController
 
     payload = {
       'from' => 'brinkman.spenser@gmail.com',
-      'fromName' => sender_name
+      'fromName' => sender_name,
       'replyTo' => sender_email,
       'msgTo' => ['brinkman.spenser@gmail.com'],
       'subject' => msg_subject || 'A message was sent via your portfolio',
