@@ -2178,14 +2178,6 @@ input, select, textarea {
         white-space: nowrap;
     }
 
-    #footer {
-        z-index: 0;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 5px;
-    }
-
     #attribution {
         line-height: .4em;
         font-size: .4em;
