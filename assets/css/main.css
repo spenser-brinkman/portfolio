@@ -2226,7 +2226,7 @@ input, select, textarea {
         background-color: #181A1B;
         width: 80%;
         max-width: 1000px;
-        max-height: 80vh;
+        max-height: 90vh;
         overflow: auto;
     }
 
