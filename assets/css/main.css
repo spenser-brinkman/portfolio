@@ -2178,13 +2178,6 @@ input, select, textarea {
         white-space: nowrap;
     }
 
-    #attribution {
-        line-height: .4em;
-        font-size: .4em;
-        padding: 0 0 0 0;
-        margin-bottom: 0;
-    }
-
     #main {
         z-index: 1;
     }
