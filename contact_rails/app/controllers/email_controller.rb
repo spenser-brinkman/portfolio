@@ -17,29 +17,25 @@ class EmailController < ApplicationController
     return render response(200, 'Message successfully sent!') if SpamFilter.filter(msg_body)
 
     payload = generate_payload(sender_name, sender_address, msg_subject, msg_body)
-
     res = send_email(payload)
 
-    if res['success']
-      render response(200, 'Message successfully sent!')
-    elsif res['error'].present?
-      render response(400, res['error'])
-    else
-      render response(500, 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at brinkman.spenser@gmail.com.')
-    end
+    return render response(200, 'Message successfully sent!') if res['success']
+    return render response(400, res['error']) if res['error'].present?
+
+    render response(500, 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at brinkman.spenser@gmail.com.')
   end
 
   private
-
-  def validate_email(email)
-    email.match?(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/)
-  end
 
   def response(status, message)
     {
       status:,
       json: { message: }
     }
+  end
+
+  def validate_email(email)
+    email.match?(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/)
   end
 
   def generate_payload(sender_name, sender_address, msg_subject, msg_body)
