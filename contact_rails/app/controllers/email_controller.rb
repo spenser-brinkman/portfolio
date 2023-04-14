@@ -13,6 +13,9 @@ class EmailController < ApplicationController
       return render response(400, "The provided email doesn't seem to be valid. If you think this error is a mistake, please let me know by emailing me directly at brinkman.spenser@gmail.com.")
     end
 
+    # Return false success message to spam attempts
+    return render response(200, 'Message successfully sent!') if SpamFilter.filter(msg_body)
+
     payload = generate_payload(sender_name, sender_address, msg_subject, msg_body)
 
     res = send_email(payload)
