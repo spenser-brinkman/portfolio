@@ -40,7 +40,7 @@ class EmailController < ApplicationController
 
   def generate_payload(sender_name, sender_address, msg_subject, msg_body)
     {
-      'from' => 'brinkmn.spenser@gmail.com',
+      'from' => 'brinkman.spenser@gmail.com',
       'fromName' => "#{sender_name} (via portfolio)",
       'replyTo' => sender_address,
       'msgTo' => ['brinkman.spenser@gmail.com'],
