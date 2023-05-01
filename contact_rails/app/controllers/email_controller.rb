@@ -10,7 +10,7 @@ class EmailController < ApplicationController
     return render res(400, 'Please include a message body.') if msg_body.blank?
 
     unless validate_email(sender_address)
-      return render res(400, "The provided email doesn't seem to be valid. If you think this error is a mistake, please let me know by emailing me directly at brinkman.spenser@gmail.com.")
+      return render res(400, "The provided email doesn't seem to be valid. If you think this error is a mistake, please let me know by emailing me directly at hello@spenserbrinkman.com.")
     end
 
     # Return false success message to spam attempts
@@ -22,7 +22,7 @@ class EmailController < ApplicationController
     return render res(200, 'Message successfully sent!') if req['success']
     return render res(400, req['error']) if req['error'].present?
 
-    render res(500, 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at brinkman.spenser@gmail.com.')
+    render res(500, 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at hello@spenserbrinkman.com.')
   end
 
   private
