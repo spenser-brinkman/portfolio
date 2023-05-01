@@ -19,8 +19,8 @@ class EmailController < ApplicationController
     payload = generate_payload(sender_name, sender_address, msg_subject, msg_body)
     req = send_email(payload)
 
-    return render res(200, 'Message successfully sent!') if req['success']
-    return render res(400, req['error']) if req['error'].present?
+    return render res(200, 'Message successfully sent!') if req.success?
+    return render res(400, req['Error']) if req['Error'].present?
 
     render res(500, 'There was an error delivering your message. I would appreciate you bringing this to my attention by emailing me directly at hello@spenserbrinkman.com.')
   end
