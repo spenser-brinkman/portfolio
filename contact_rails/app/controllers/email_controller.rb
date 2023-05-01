@@ -40,18 +40,29 @@ class EmailController < ApplicationController
 
   def generate_payload(sender_name, sender_address, msg_subject, msg_body)
     {
-      'from' => 'brinkman.spenser@gmail.com',
-      'fromName' => "#{sender_name} (via portfolio)",
-      'replyTo' => sender_address,
-      'msgTo' => ['brinkman.spenser@gmail.com'],
-      'subject' => msg_subject.present? ? msg_subject : 'A message was sent via your portfolio',
-      'body' => "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_address}<br>Subject: #{msg_subject}<br><br>#{msg_body}",
-      'apikey' => Rails.application.credentials.apikey
+      'Recipients': {
+        'To': ['hello@spenserbrinkman.com']
+      },
+      'Content': {
+        'Subject': msg_subject.present? ? msg_subject : 'Message sent via portfolio',
+        'From': "#{sender_name} (via portfolio) <hello@spenserbrinkman.com>",
+        'ReplyTo': "Test ReplyTo <#{sender_address}>",
+        'Body': [{
+          'ContentType': 'HTML',
+          'Content': "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_address}<br>Subject: #{msg_subject}<br><br>#{msg_body}"
+        }]
+      }
     }
   end
 
   def send_email(payload)
-    url = 'https://api.elasticemail.com/v2/email/send'
-    HTTParty.post(url, payload)
+    HTTParty.post(
+      'https://api.elasticemail.com/v4/emails/transactional',
+      body: payload,
+      headers: {
+        'Content-Type' => 'application/json',
+        'X-ElasticEmail-ApiKey' => Rails.application.credentials.apikey
+      }
+    )
   end
 end
