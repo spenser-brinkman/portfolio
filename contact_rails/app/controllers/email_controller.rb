@@ -44,12 +44,19 @@ class EmailController < ApplicationController
         'To': ['hello@spenserbrinkman.com']
       },
       'Content': {
-        'Subject': msg_subject.present? ? msg_subject : 'Message sent via portfolio',
-        'From': "#{sender_name} (via portfolio) <hello@spenserbrinkman.com>",
-        'ReplyTo': "Test ReplyTo <#{sender_address}>",
+        'Subject': msg_subject.present? ? "#{msg_subject} (via portfolio)" : 'Message sent via portfolio',
+        'From': "#{sender_name} <hello@spenserbrinkman.com>",
+        'ReplyTo': "#{sender_name} <#{sender_address}>",
         'Body': [{
           'ContentType': 'HTML',
-          'Content': "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_address}<br>Subject: #{msg_subject}<br><br>#{msg_body}"
+          'Content': "The following message was sent via the contact form on \
+                      <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:\
+                      <br><br><br>\
+                      From: #{sender_name}<br>\
+                      Email: #{sender_address}<br>\
+                      Subject: #{msg_subject.present? ? msg_subject : 'No subject provided'}\
+                      <br><br>\
+                      #{msg_body}"
         }]
       }
     }.to_json
