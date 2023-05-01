@@ -52,7 +52,7 @@ class EmailController < ApplicationController
           'Content': "The following message was sent via the contact form on <a href=\"spenserbrinkman.com\">spenserbrinkman.com</a>:<br><br><br>From: #{sender_name}<br>Email: #{sender_address}<br>Subject: #{msg_subject}<br><br>#{msg_body}"
         }]
       }
-    }
+    }.to_json
   end
 
   def send_email(payload)
