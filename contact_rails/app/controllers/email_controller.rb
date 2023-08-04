@@ -14,7 +14,7 @@ class EmailController < ApplicationController
     end
 
     # Return false success message to spam attempts
-    return render res(200, 'Message successfully sent!') if SpamFilter.message_filter(msg_body) || SpamFilter.sender_filter(sender_name)
+    return render res(200, 'Message successfully sent!') if SpamFilter.message_filter(msg_body) || SpamFilter.message_filter(msg_subject) || SpamFilter.sender_filter(sender_name)
 
     payload = generate_payload(sender_name, sender_address, msg_subject, msg_body)
     req = send_email(payload)

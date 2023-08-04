@@ -10,7 +10,8 @@ class SpamFilter
     'promote',
     'entrepreneur',
     'free',
-    'price'
+    'price',
+    'owner'
   ].freeze
 
   BLACKLIST = [
